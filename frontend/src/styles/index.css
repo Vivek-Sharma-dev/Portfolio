@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* colors */
+  --color-bg: #0b0b0e;
+  --color-surface: #101014;
+  --color-surface-2: #1a1a21;
+  --color-line: #26262f;
+  --color-line-strong: #3a3a45;
+  --color-ink: #0b0b0e; /* text on brand background */
+  --color-text: #f2f1ec;
+  --color-muted: #a3a3ad;
+  --color-brand: #c6ff3d;
+  --color-brand-hover: #dfff7a;
+
+  /* fonts */
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* animations */
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-blink: blink 1.6s ease-in-out infinite;
+  --animate-cursor: blink 1s step-end infinite;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-spin-slow: spin 28s linear infinite;
+  --animate-grow: grow 1.4s ease-out both;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes grow {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-brand text-ink;
+  }
+}
+
+@layer components {
+  .section {
+    @apply mx-auto max-w-[1360px] px-6 pt-28 pb-10 md:px-14;
+  }
+  .label {
+    @apply mb-5 font-mono text-sm text-brand;
+  }
+  .panel {
+    @apply rounded-3xl border border-line bg-surface p-8;
+  }
+  .chip {
+    @apply rounded-full border border-line-strong px-4 py-2 font-mono text-[13px];
+  }
+
+  .card {
+    @apply rounded-3xl border border-line bg-surface p-8 transition duration-300
+                      hover:-translate-y-1.5 hover:border-brand hover:bg-surface-2;
+  }
+
+  .btn {
+    @apply inline-block rounded-full bg-brand px-7 py-4 font-bold text-ink
+                      transition duration-200 hover:-translate-y-0.5 hover:bg-brand-hover;
+  }
+  .btn-ghost {
+    @apply inline-block rounded-full border border-line-strong px-7 py-4
+                      transition hover:border-brand hover:text-brand;
+  }
+
+  .link {
+    @apply border-b border-brand transition-colors hover:text-brand;
+  }
+
+  .bar {
+    @apply mt-2 h-1.5 overflow-hidden rounded-full bg-line;
+  }
+  .bar > span {
+    @apply block h-full origin-left rounded-full bg-brand animate-grow;
+  }
+
+  .cursor {
+    @apply inline-block h-[15px] w-2 bg-brand align-middle animate-cursor;
+  }
+}
