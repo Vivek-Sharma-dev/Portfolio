@@ -113,4 +113,143 @@
   .cursor {
     @apply inline-block h-[15px] w-2 bg-brand align-middle animate-cursor;
   }
+
+  .hero-spin {
+    @apply animate-spin-slow rounded-full w-120 h-120 border-brand border-dashed
+  }
+
+  .float-animate {
+    @apply animate-float
+  }
+
+  
+}
+
+
+
+@layer components {
+  .marquee-viewport {
+    width: 100%;
+    overflow: hidden;
+
+    /* Fade the content at both horizontal edges. */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 30%,
+      black 70%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 30%,
+      black 70%,
+      transparent
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation-duration: var(--marquee-duration, 32s);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  /* First row: content moves from left to right. */
+  .marquee-track--right {
+    animation-name: marquee-right;
+  }
+
+  /* Second row: content moves from right to left. */
+  .marquee-track--left {
+    animation-name: marquee-left;
+  }
+
+  .marquee-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1.5rem;
+    min-width: 100vw;
+    padding-right: 1.5rem;
+  }
+
+  .marquee-item {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--color-line);
+    border-radius: 9999px;
+    background: var(--color-bg);
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transition:
+      color 200ms ease,
+      border-color 200ms ease,
+      background-color 200ms ease;
+  }
+
+
+  .marquee-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--color-brand);
+    opacity: 0.8;
+  }
+
+  @keyframes marquee-left {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+
+  /* Avoid unnecessary movement for users who request reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      transform: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .marquee-group {
+      min-width: 0;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .marquee-group[aria-hidden="true"] {
+      display: none;
+    }
+  }
 }
