@@ -26,10 +26,10 @@ const StatsSection = () => {
           <div
             key={stat.label}
             className="
-              flex min-h-[172px] flex-col justify-center
+              flex min-h-43 flex-col justify-center
               rounded-[26px]
               border border-[#27272f]
-              bg-[#101014]
+              bg-surface
               px-8 py-7
               transition-all duration-300
               hover:border-[#c5ff31]/40

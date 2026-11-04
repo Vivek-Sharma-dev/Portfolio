@@ -105,7 +105,7 @@ export default function Navbar() {
     <header ref={navbarRef} className="relative z-50 w-full bg-bg">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:px-14"
+        className="mx-auto flex max-w-340 items-center justify-between px-6 py-5 md:px-14"
       >
         {/* Brand */}
         <a
@@ -189,7 +189,7 @@ export default function Navbar() {
             : "invisible pointer-events-none opacity-0",
         ].join(" ")}
       >
-        <div className="mx-auto flex max-w-[1360px] flex-col gap-1 px-6 py-5 md:px-14">
+        <div className="mx-auto flex max-w-340 flex-col gap-1 px-6 py-5 md:px-14">
           {navigationLinks.map((link) => {
             const sectionId = link.href.slice(1);
             const isActive = activeSection === sectionId;
