@@ -1,4 +1,5 @@
 import { useId } from "react";
+import StatsSection from "./StatsCard";
 
 type MarqueeRowProps = {
   label: string;
@@ -43,7 +44,7 @@ export default function SkillsMarquee() {
   return (
     <section
       aria-label="Technologies and tools"
-      className="  py-7 sm:py-5 mt-30"
+      className="  py-7 sm:py-5 mt-30 space-y-15"
     >
       <MarqueeRow
         label="01 / CORE TECHNOLOGIES"
@@ -80,6 +81,8 @@ export default function SkillsMarquee() {
         direction="left"
         duration={31}
       />
+
+      <StatsSection />
     </section>
   );
 }
