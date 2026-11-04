@@ -73,7 +73,7 @@
 
 @layer components {
   .section {
-    @apply mx-auto max-w-[1360px] px-6 pt-28 pb-10 md:px-14;
+    @apply mx-auto max-w-340 pt-15 pb-10 ;
   }
   .label {
     @apply mb-5 font-mono text-sm text-brand;
@@ -111,7 +111,7 @@
   }
 
   .cursor {
-    @apply inline-block h-[15px] w-2 bg-brand align-middle animate-cursor;
+    @apply inline-block h-3.75 w-2 bg-brand align-middle animate-cursor;
   }
 
   .hero-spin {

@@ -1,4 +1,3 @@
-
 const stats = [
   {
     value: "04",
@@ -9,7 +8,7 @@ const stats = [
     label: "Technologies used",
   },
   {
-    value: "[2022]",
+    value: "2022",
     label: "Started coding",
   },
   {

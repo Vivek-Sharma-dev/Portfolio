@@ -1,5 +1,6 @@
 import HeroIntro from "../components/heroComponents/HeroIntro";
 import HeroImage from "../assets/static/hero_placeholder.png";
+import SkillsMarquee from "../components/sections/SkillsMarkquee";
 
 const HeroSection = () => {
   return (
@@ -156,6 +157,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+        <SkillsMarquee />
+
     </>
   );
 };
