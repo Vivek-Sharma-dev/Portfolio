@@ -1,5 +1,7 @@
 import Navbar from "./components/layout/Navbar";
 import AboutSection from "./pages/AboutSection";
+import AskAISection from "./pages/AskAISection";
+import ContactSection from "./pages/ContactSection";
 import HeroSection from "./pages/HeroSection";
 import JourneySection from "./pages/JourneySkills";
 import ProcessSection from "./pages/ProcessSection";
@@ -17,6 +19,8 @@ const App = () => {
         <JourneySection />  
         <AboutSection />
         <ProcessSection />
+        <AskAISection />
+        <ContactSection />
       </main>
     </>
   );
