@@ -16,7 +16,7 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20">
         {/* Left: Heading */}
         <div>
-          <p className="label">04 / ABOUT ME</p>
+          <p className="label">03 / ABOUT ME</p>
 
           <h2 className="max-w-xl text-4xl leading-[1.15] font-bold tracking-tight sm:text-5xl lg:text-6xl">
             More than just

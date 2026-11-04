@@ -1,6 +1,7 @@
 import Navbar from "./components/layout/Navbar";
 import AboutSection from "./pages/AboutSection";
 import HeroSection from "./pages/HeroSection";
+import SkillsSection from "./pages/SkillsSection";
 import WorkSection from "./pages/WorkSection";
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
         <HeroSection />
         <WorkSection />
         <AboutSection />
+        <SkillsSection />
       </main>
     </>
   );
