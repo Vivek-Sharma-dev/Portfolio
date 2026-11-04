@@ -1,5 +1,6 @@
 import { useId } from "react";
 import StatsSection from "./StatsCard";
+import { HeroData } from "../../data/hero";
 
 type MarqueeRowProps = {
   label: string;
@@ -48,17 +49,7 @@ export default function SkillsMarquee() {
     >
       <MarqueeRow
         label="01 / CORE TECHNOLOGIES"
-        skills={[
-          "React",
-          "TypeScript",
-          "JavaScript",
-          "Node.js",
-          "Express.js",
-          "PostgreSQL",
-          "MongoDB",
-          "HTML5",
-          "CSS3",
-        ]}
+        skills={HeroData.coreSkills}
         direction="right"
         duration={36}
       />
@@ -67,17 +58,7 @@ export default function SkillsMarquee() {
 
       <MarqueeRow
         label="02 / TOOLS & ECOSYSTEM"
-        skills={[
-          "Tailwind CSS",
-          "TanStack Query",
-          "Zod",
-          "Axios",
-          "GSAP",
-          "Git",
-          "GitHub",
-          "Vite",
-          "Motion",
-        ]}
+        skills={HeroData.toolSkills}
         direction="left"
         duration={31}
       />

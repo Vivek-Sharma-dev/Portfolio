@@ -1,6 +1,6 @@
 import HeroIntro from "../components/heroComponents/HeroIntro";
-import HeroImage from "../assets/static/hero_placeholder.png";
 import SkillsMarquee from "../components/sections/SkillsMarkquee";
+import { personalInfo } from "../data/personal";
 
 const HeroSection = () => {
   return (
@@ -16,9 +16,9 @@ const HeroSection = () => {
             <div className="border-2 border-brand border-dashed w-120 h-120 rounded-full hero-spin"></div>
             <div className="absolute top-15 left-15 w-90 h-90 border rounded-full flex justify-center items-center overflow-hidden">
               <img
-                src={HeroImage}
-                alt="my "
-                className="w-full h-full object-co/"
+                src={personalInfo.image}
+                alt="my image"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute left-0 top-10  px-5 py-1 border rounded-full border-brand bg-gray-800 float-animate">
@@ -63,14 +63,14 @@ const HeroSection = () => {
                   <p className="pl-6">
                     <span className="text-sky-300">name</span>
                     <span className="text-text">: </span>
-                    <span className="text-green-300">"Vivek Sharma"</span>,
+                    <span className="text-green-300">"{personalInfo.name}"</span>,
                   </p>
 
                   <p className="pl-6">
                     <span className="text-sky-300">role</span>
                     <span className="text-text">: </span>
                     <span className="text-green-300">
-                      "Full-Stack Developer"
+                      "{personalInfo.role}"
                     </span>
                     ,
                   </p>
@@ -94,13 +94,13 @@ const HeroSection = () => {
                   <p className="pl-6">
                     <span className="text-sky-300">mindset</span>
                     <span className="text-text">: </span>
-                    <span className="text-green-300">"Always learning"</span>,
+                    <span className="text-green-300">"{personalInfo.mindset}"</span>,
                   </p>
 
                   <p className="pl-6">
                     <span className="text-sky-300">building</span>
                     <span className="text-text">: </span>
-                    <span className="text-green-300">"Ideas into reality"</span>
+                    <span className="text-green-300">"{personalInfo.building}"</span>
                     <span className="cursor ml-1" />
                   </p>
 

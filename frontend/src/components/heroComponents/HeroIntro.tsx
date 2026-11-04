@@ -1,4 +1,5 @@
-
+import { personalInfo } from "../../data/personal";
+import { HeroData } from "../../data/hero";
 const HeroIntro = () => {
   return (
     <div className="flex flex-col items-start">
@@ -10,17 +11,17 @@ const HeroIntro = () => {
         </span>
 
         <span className="font-mono text-xs tracking-wide text-muted">
-          OPEN TO OPPORTUNITIES
+          {HeroData.availability}
         </span>
       </div>
 
       {/* Main Heading */}
       <h1 className="text-5xl leading-[1.05] font-bold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
-        Building
+        {HeroData.heading.first}
         <br />
-        <span className="text-brand">digital</span>
+        <span className="text-brand">{HeroData.heading.highlight}</span>
         <br />
-        experiences<span className="text-brand">.</span>
+        {HeroData.heading.last}
       </h1>
 
       {/* Introduction */}
@@ -32,7 +33,7 @@ const HeroIntro = () => {
 
       {/* Tech Stack */}
       <div className="mt-6 flex flex-wrap items-center gap-2">
-        {["React", "Node.js", "Express", "PostgreSQL", "TypeScript"].map(
+        {HeroData.techStack.map(
           (tech) => (
             <span key={tech} className="chip text-muted">
               {tech}
