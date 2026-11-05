@@ -25,6 +25,17 @@
   --animate-float: float 5s ease-in-out infinite;
   --animate-spin-slow: spin 28s linear infinite;
   --animate-grow: grow 1.4s ease-out both;
+  --animate-float-cq: float-cq 3s ease-in-out infinite;
+  @keyframes float-cq {
+    0%,
+    100% {
+      transform: translateY(0);
+      
+    }
+    50% {
+      transform: translateY(-1.3cqw);
+    }
+  }
 
   @keyframes marquee {
     to {

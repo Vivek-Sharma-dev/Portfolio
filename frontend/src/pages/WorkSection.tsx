@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { projects } from "../data/work";
 const WorkSection = () => {
@@ -11,7 +11,7 @@ const WorkSection = () => {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             Selected <span className="text-brand">Work.</span>
           </h2>
-        </div> 
+        </div>
 
         <span className="pb-1 font-mono text-xs text-muted sm:text-sm">
           {String(projects.length).padStart(2, "0")} Projects
@@ -27,8 +27,15 @@ const WorkSection = () => {
           >
             {/* Project Preview Placeholder */}
             <div className="relative m-3 aspect-video overflow-hidden rounded-2xl border border-line bg-surface-2">
+              {project.preview && (
+                <img
+                  src={project.preview}
+                  alt={project.name}
+                  className="h-full w-full object-cover"
+                />
+              )}
               <div
-                className={`absolute inset-0 bg-linear-to-br ${project.accent}`}
+                className={`absolute inset-0 bg-linear-to-br ${project.preview? "bg-black/10" : project.accent}`}
               />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -40,10 +47,11 @@ const WorkSection = () => {
                   {project.name}
                   <span className="text-brand">.</span>
                 </h3>
-
-                <span className="mt-3 rounded-full border border-line-strong bg-bg/50 px-3 py-1 font-mono text-[10px] text-muted backdrop-blur-sm">
+                {!project.preview && (
+                  <span className="mt-3 rounded-full border border-line-strong bg-bg/50 px-3 py-1 font-mono text-[10px] text-muted backdrop-blur-sm">
                   PREVIEW COMING SOON
                 </span>
+                )}
               </div>
             </div>
 
@@ -122,11 +130,11 @@ const WorkSection = () => {
           </article>
         ))}
       </div>
-        {projects.length > 4 && (
-          <div className="border-2 border-brand text-center py-2 rounded-full text-brand font-bold mt-6  hover:bg-brand hover:text-black transition-all duration-300 cursor-pointer active:scale-95">
-            +{projects.length - 4} more
-          </div>
-        )}
+      {projects.length > 4 && (
+        <div className="border-2 border-brand text-center py-2 rounded-full text-brand font-bold mt-6  hover:bg-brand hover:text-black transition-all duration-300 cursor-pointer active:scale-95">
+          +{projects.length - 4} more
+        </div>
+      )}
     </section>
   );
 };

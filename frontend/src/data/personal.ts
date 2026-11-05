@@ -1,4 +1,4 @@
-import img from "../assets/static/hero_placeholder.png"
+import img from "../assets/static/hero_placeholder.webp"
 export const personalInfo = {
   name: "Vivek Sharma",
   brand: "vivek.dev",

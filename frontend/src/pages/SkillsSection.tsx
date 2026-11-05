@@ -66,7 +66,7 @@ const SkillsSection = () => {
                     className="flex items-center justify-between gap-3 border-b border-line py-4 last:border-b-0"
                   >
                     <div className="flex min-w-0 items-center gap-3">
-                      <span className="font-mono text-[10px] text-muted/60">
+                      <span className="font-mono text-[10px] text-muted">
                         {String(index + 1).padStart(2, "0")}
                       </span>
 

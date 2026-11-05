@@ -57,7 +57,7 @@ export default function Navbar() {
   useEffect(() => {
     if (!isMenuOpen) return;
 
-    const handleOutsideClick = (e: KeyboardEvent | TouchEvent) => {
+    const handleOutsideClick = (e: KeyboardEvent | TouchEvent | MouseEvent) => {
       if (
         navbarRef.current &&
         e.target instanceof Node &&

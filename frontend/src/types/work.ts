@@ -8,5 +8,6 @@ export type Project = {
   status: "Completed" | "In Progress";
   liveDemo: string;
   github: string;
-  accent: string;
+  accent?: string;
+  preview?: string;
 };
