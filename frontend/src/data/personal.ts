@@ -17,7 +17,7 @@ export const personalInfo = {
   about: {
     heading: "Design sense, developer discipline.",
     description:
-      "I'm a computer science student and full-stack developer who enjoys turning ideas into practical web applications.",
+      `I'm a computer science student and full-stack developer who enjoys turning ideas into practical web applications.`,
   },
 
   contact: {

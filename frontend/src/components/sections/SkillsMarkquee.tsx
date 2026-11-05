@@ -1,7 +1,6 @@
 import { useId } from "react";
 import StatsSection from "./StatsCard";
-import { HeroData } from "../../data/hero";
-
+import { techInfo } from "../../data/techStats";
 type MarqueeRowProps = {
   label: string;
   skills: string[];
@@ -49,7 +48,7 @@ export default function SkillsMarquee() {
     >
       <MarqueeRow
         label="01 / CORE TECHNOLOGIES"
-        skills={HeroData.coreSkills}
+        skills={techInfo.coreSkills}
         direction="right"
         duration={36}
       />
@@ -58,7 +57,7 @@ export default function SkillsMarquee() {
 
       <MarqueeRow
         label="02 / TOOLS & ECOSYSTEM"
-        skills={HeroData.toolSkills}
+        skills={techInfo.toolSkills}
         direction="left"
         duration={31}
       />

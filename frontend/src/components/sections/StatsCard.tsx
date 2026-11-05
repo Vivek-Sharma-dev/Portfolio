@@ -1,27 +1,10 @@
-const stats = [
-  {
-    value: "04",
-    label: "Projects built",
-  },
-  {
-    value: "05+",
-    label: "Technologies used",
-  },
-  {
-    value: "2022",
-    label: "Started coding",
-  },
-  {
-    value: "100%",
-    label: "Responsive builds",
-  },
-];
+import { techInfo } from "../../data/techStats";
 
 const StatsSection = () => {
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-        {stats.map((stat) => (
+        {techInfo.techStats.map((stat) => (
           <div
             key={stat.label}
             className="
