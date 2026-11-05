@@ -44,7 +44,7 @@ export default function SkillsMarquee() {
   return (
     <section
       aria-label="Technologies and tools"
-      className="  py-7 sm:py-5 mt-30 space-y-15"
+      className="mt-24 space-y-4 lg:space-y-8 py-6 sm:mt-28 sm:space-y-15 sm:py-8 lg:mt-30"
     >
       <MarqueeRow
         label="01 / CORE TECHNOLOGIES"

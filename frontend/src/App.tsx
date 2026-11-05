@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-340 px-6 pt-5 pb-10 md:px-14">
+      <main className="mx-auto max-w-340 px-6 pt-5 pb-10 md:px-14 overflow-x-hidden">
         <HeroSection />
         <WorkSection />
         <SkillsSection />
